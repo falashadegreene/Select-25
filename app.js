@@ -2,6 +2,7 @@
 
 var express = require("express"),
 	mongoose = require("mongoose"),
+	path = require("path");
 	passport = require("passport"),
 	bodyParser = require("body-parser"),
 	LocalStrategy = require("passport-local"),

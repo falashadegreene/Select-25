@@ -14,6 +14,7 @@ mongoose.connect("mongodb://localhost/27017");
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(require("express-session")({
 	secret: "Rusty is a dog",
 	resave: false,
@@ -22,6 +23,7 @@ app.use(require("express-session")({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
